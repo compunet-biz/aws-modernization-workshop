@@ -212,13 +212,15 @@ the default Security Group only allows port 8080 from PetStoreLbSecurityGroup to
 
 13. Select *ENABLED* from *Auto-assign public IP*. This allows your tasks to retrieve the Docker image from Amazon ECR and stream logs to Amazon CloudWatch Logs.
 
-14. Set the *Health check grace period* to *300*. Note: This is the period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy
++
+14. Under Load Balancing, select the Application Load Balancer and make sure *petstore-lb* is selected.
+
+15. Set the *Health check grace period* to *300*. Note: This is the period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy
 Elastic Load Balancing target health checks after a task has first started. This is only valid if your service
 is configured to use a load balancer. If your service's tasks take a while to start and respond to health checks,
 you can specify a health check grace period of up to 7,200 seconds during which the ECS service scheduler ignores the health check status.
 This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
-+
-15. Under Load Balancing, select the Application Load Balancer and make sure *petstore-lb* is selected.
+
 +
 16. For *Container to load balance* select *petstore:8080:8080* and click *Add to load balancer*.
 +
