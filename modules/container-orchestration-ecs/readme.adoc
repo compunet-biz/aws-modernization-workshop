@@ -203,7 +203,7 @@ aws ecs register-task-definition --cli-input-json file://~/environment/aws-moder
 +
 9. Enter *1* into *Number of tasks* and click *Next step*.
 +
-10. Select the *petstore* VPC for *Cluster VPC*.
+10. Select the *petstore* VPC for *Cluster VPC* (_Hint: Hover the mouse cursor over the VPCs in the drop-down to get a tooltip showing the VPC name_).
 +
 11. Select the two *Public* petstore Subnets for *Subnets*.
 +
