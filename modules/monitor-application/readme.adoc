@@ -439,4 +439,4 @@ As you are inspecting the properties of your task, each container in the task sh
 
 * Our Pet Store application is configured to log to `STDOUT` and `STDERR` which is the command output that you would normally see in an interactive terminal if you ran the container locally.
 * We defined the `logDriver` in our `petstore-fargate-task-definition.json` as `awslogs` along with some settings around CloudWatch. The awslogs log driver simply passes these STDOUT and STDERR from Docker to CloudWatch.
-* In order to have our container instances can send log data to CloudWatch Logs, there is an IAM policy called petstoreExecutionRole that allows your container instances to use the CloudWatch Logs APIs that we are defining in the `petstore-fargate-task-definition.json`.
+* In order to have our container instances send log data to CloudWatch Logs, there is an IAM policy called petstoreExecutionRole that allows your container instances to use the CloudWatch Logs APIs that we are defining in the `petstore-fargate-task-definition.json`.
