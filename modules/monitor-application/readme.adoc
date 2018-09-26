@@ -249,7 +249,7 @@ docker inspect containerize-application_petstore_1 | jq '.[].State.Health'
 +
 [source,shell]
 ----
-docker tag containerize-application_petstore:latest 123456789012.dkr.ecr.us-west-2.amazonaws.com/petstore_frontend:latest
+docker tag containerize-application_petstore:latest $(aws ecr describe-repositories --repository-name petstore_frontend --query=repositories[0].repositoryUri --output=text):latest
 ----
 +
 9. Run the following command to push this image to the ECR repository. Note: You need to replace the value with
@@ -257,7 +257,7 @@ the tag you applied in the previous step.
 +
 [source,shell]
 ----
-docker push 123456789012.dkr.ecr.us-west-2.amazonaws.com/petstore_frontend:latest
+docker push $(aws ecr describe-repositories --repository-name petstore_frontend --query=repositories[0].repositoryUri --output=text):latest
 ----
 +
 You should see the Docker image being pushed:
