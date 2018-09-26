@@ -227,7 +227,14 @@ items:
             value: password
 ----
 +
-5. Replace the *<YourAccountID>* placeholders with your https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html[Account ID] and save the file.
+5. Replace the *<YourAccountID>* placeholders with your https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html[Account ID].
++
+[source,shell]
+----
+ACCOUNT_ID=$(aws ecr describe-repositories --repository-name petstore_frontend --query=repositories[0].repositoryUri --output=text | cut -d"." -f1)
+echo ${ACCOUNT_ID}
+sed -i "s/<YourAccountID>/${ACCOUNT_ID}/" petstore-eks-manifest.yaml
+----
 
 6. Apply your manifest by running this command in your Cloud9 terminal:
 +
