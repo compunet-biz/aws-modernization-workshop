@@ -195,7 +195,7 @@ services:
   petstore:
     build:
       context: ./
-      dockerfile: Dockerfile.result
+      dockerfile: Dockerfile
     depends_on:
       - postgres
     ports:
