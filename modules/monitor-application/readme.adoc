@@ -240,9 +240,12 @@ docker inspect containerize-application_petstore_1 | jq '.[].State.Health'
 }
 ....
 +
-7. Once you've confirmed that our Pet Store application is working with healthchecks, visit http://localhost:8080/applicationPetstore to view the application.
+7. Once you've confirmed that our Pet Store application is working with healthchecks, click *Preview* from the top
+   menu of the Cloud9 environment.
+
+8. Then navigate to `/applicationPetstore/` to view the application. _note: The trailing slash is required._
 +
-8. Now we must tag the containerize-application_petstore image so you can push the image to the ECR repository. Note: You need to replace the value from the repositoryURI from the previous labs.
+9. Now we must tag the containerize-application_petstore image so you can push the image to the ECR repository. Note: You need to replace the value from the repositoryURI from the previous labs.
 +
 [source,shell]
 ----
