@@ -139,7 +139,7 @@ Step 2:: Add the IP to our settings.xml
 sed -i "s/<artifact-ip>/$ART_IP/" settings.xml
 ----
 
-Step 3:: Make some modifications to Dockerfile
+Step 3:: Make some modifications to the Dockerfile.
 Now that we have the repository information saved in the `settings.xml` for maven, we also need to make sure that Docker copies the file into the new build environment. We do that by simply adding a single line to the existing `Dockerfile`
 
 [source,shell]
