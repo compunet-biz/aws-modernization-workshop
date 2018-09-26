@@ -292,7 +292,7 @@ Now, in addition to supporting ELB health checks, Amazon ECS integrates with Doc
 
 Note: The Amazon ECS container agent only monitors and reports on the health checks specified in the task definition. Amazon ECS does not monitor Docker health checks that are embedded in a container image and not specified in the container definition. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image.
 
-1. To get started, navigate to the folder where you created your `petstore-fargate-task-definition.json` in the `containerize-orchestration` folder from the previous lab within this repository. Then open the `petstore-fargate-task-definition.json` in your editor of choice.
+1. To get started, navigate to the folder where you created your `petstore-fargate-task-definition.json` in the `container-orchestration-ecs` folder from the previous lab within this repository. Then open the `petstore-fargate-task-definition.json` in your editor of choice.
 +
 2. Add the healthcheck values to the `postgres` and `petstore` sections of `containerDefinitions` so that it looks like the example below. You will notice we are essentially setting the same settings for `healthCheck` as what we defined in the previous exercise.
 +
@@ -406,7 +406,7 @@ Note: The Amazon ECS container agent only monitors and reports on the health che
 +
 [source,shell]
 ----
-aws ecs register-task-definition --cli-input-json file://~/environment/aws-modernization-workshop/modules/container-orchestration/petstore-fargate-task-definition.json
+aws ecs register-task-definition --cli-input-json file://~/environment/aws-modernization-workshop/modules/container-orchestration-ecs/petstore-fargate-task-definition.json
 ----
 +
 5. Update the `petstore` service in the `petstore-workshop` cluster with the latest version of the `petstore` task definition by running the below command. This will also pull the latest version of the petstore_frontend container we uploaded previously.
